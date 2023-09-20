@@ -4,16 +4,22 @@ screen = Screen()
 timmy = Turtle()
 screen.colormode(255)
 
+
+def random_color():
+    R = randint(0, 255)
+    G = randint(0, 255)
+    B = randint(0, 255)
+    return R, G, B
+
+
 # # Turtle Challenge loop shapes with same sized sides
-# for i in range(3, 11):
-#     turn = 360/i
-#     R = randint(0, 255)
-#     G = randint(0, 255)
-#     B = randint(0, 255)
-#     timmy.color(R, G, B)
-#     for _ in range(i):
-#         timmy.right(turn)
-#         timmy.forward(100)
+def loop_shapes():
+    for i in range(3, 11):
+        turn = 360/i
+        timmy.color(random_color())
+        for _ in range(i):
+            timmy.right(turn)
+            timmy.forward(100)
 
 
 # # Turtle Challenge Random Walk
@@ -23,36 +29,27 @@ def random_walk(angles_list):
     timmy.forward(20)
 
 
-angles = [0, 90, 180, 270]
-timmy.speed(8)
-timmy.width(6)
-for _ in range(200):
-    R = randint(0, 255)
-    G = randint(0, 255)
-    B = randint(0, 255)
-    timmy.color(R, G, B)
-    random_walk(angles)
+def walk():
+    angles = [0, 90, 180, 270]
+    timmy.speed(8)
+    timmy.width(6)
+    for _ in range(200):
+        timmy.color(random_color())
+        random_walk(angles)
 
 
+# # Turtle Challenge Draw Spirograph
+def spirograph():
+    timmy.speed("fastest")
+    degrees = 5
+    for _ in range(int(360/degrees)):
+        timmy.circle(100)
+        timmy.left(degrees)
+        timmy.color(random_color())
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# loop_shapes()
+# walk()
+spirograph()
 
 screen.exitonclick()
