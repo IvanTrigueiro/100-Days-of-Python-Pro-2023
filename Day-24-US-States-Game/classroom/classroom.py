@@ -38,12 +38,18 @@ primary_fur_color = squirrel_data["Primary Fur Color"]
 
 # Remove NaN Values
 # primary_fur_color = primary_fur_color.dropna()
+
+# Getting a count for each color
 gray = primary_fur_color.value_counts()["Gray"]
 cinnamon = primary_fur_color.value_counts()["Cinnamon"]
 black = primary_fur_color.value_counts()["Black"]
+
+# Building the color dictionary for later
 data_dict = {
     "Fur Color": ["Gray", "Cinnamon", "Black"],
     "Count": [gray, cinnamon, black]
 }
+
+# Transform dict to dataframe and saving a file as csv
 data = pandas.DataFrame(data_dict)
 data.to_csv("squirrel_count")
