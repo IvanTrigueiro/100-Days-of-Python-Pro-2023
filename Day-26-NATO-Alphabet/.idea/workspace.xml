@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f8bf12a2-4c8e-4008-b8d0-3d5e76a3c8c2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/classroom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/.idea/Day-24-US-States-Game.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/50_states.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/blank_states_img.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/classroom/2018-Central-Park-Squirrel-Census-Squirrel-Data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/classroom/classroom.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/classroom/new_data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/classroom/squirrel_count" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/classroom/weather-data.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Day-24-US-States-Game/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classroom.py" beforeDir="false" afterPath="$PROJECT_DIR$/classroom.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,22 +23,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2W1cnkGp783Cj9NmaadEVdBzjVf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Day-26-NATO-Alphabet" />
@@ -85,16 +72,5 @@
       <updated>1695903696108</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

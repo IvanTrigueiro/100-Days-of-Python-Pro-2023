@@ -1,16 +1,29 @@
-# This is a sample Python script.
+import pandas
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+nato_df = pandas.read_csv("nato_phonetic_alphabet.csv")
 
+# TODO 1. Create a dictionary in this format:
+# {"A": "Alfa", "B": "Bravo"}
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# Loop through rows of a dataframe WITHOUT dict comprehension
+# nato_dict = {}
+# for (index, row) in nato_df.iterrows():
+#     nato_dict[row.letter] = row.code
 
+# Loop through rows of a dataframe WITH dict comprehension
+nato_dict = {row.letter: row.code for (index, row) in nato_df.iterrows()}
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# print(nato_dict)
+# TODO 2. Create a list of the phonetic code words from a word that the user inputs.
+user_word = input("Enter a word: ").upper()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# # Without list comprehension
+# result = []
+# for letter in user_word:
+#     if letter in nato_dict.keys():
+#         result.append(nato_dict[letter])
+
+# With list comprehension
+result = [nato_dict[letter] for letter in user_word]
+
+print(result)
