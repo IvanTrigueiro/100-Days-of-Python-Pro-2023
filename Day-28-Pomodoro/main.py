@@ -88,8 +88,10 @@ check_marks.grid(row=3, column=1)
 
 button_start = Button(text="Start", command=start_timer, highlightthickness=0)
 button_start.grid(row=2, column=0)
+button_start.config(bg=GREEN, fg=RED, font=(FONT_NAME, 12, "bold"))
 
 button_reset = Button(text="Reset", command=reset_timer, highlightthickness=0)
 button_reset.grid(row=2, column=2)
+button_reset.config(bg=RED, fg="white", font=(FONT_NAME, 12, "bold"))
 
 window.mainloop()
