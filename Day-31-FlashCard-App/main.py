@@ -3,9 +3,16 @@ import pandas as pd
 from random import choice
 import time
 
-data = pd.read_csv("data/french_words.csv")
-to_learn = data.to_dict(orient="records")
 current_card = {}
+to_learn = {}
+
+try:
+    data = pd.read_csv("data/words_to_learn.csv")
+except FileNotFoundError:
+    original_data = pd.read_csv("data/french_words.csv")
+    to_learn = original_data.to_dict(orient="records")
+else:
+    to_learn = data.to_dict(orient="records")
 
 
 def next_card():
@@ -25,6 +32,13 @@ def flip_card():
     canvas.itemconfig(card_title, text="English", fill="white")
     canvas.itemconfig(card_word, text=current_card["English"], fill="white")
     canvas.itemconfig(card_background, image=card_back)
+
+
+def is_known():
+    to_learn.remove(current_card)
+    data = pd.DataFrame(to_learn)
+    data.to_csv("data/words_to_learn.csv", index=False)
+    next_card()
 
 
 TITLE_FONT = ("Arial", 30, "italic")
@@ -49,7 +63,7 @@ canvas.grid(row=0, column=0, columnspan=2)
 
 # Right button
 right_img = PhotoImage(file="images/right.png")
-right_button = Button(image=right_img, highlightthickness=0, borderwidth=0, command=next_card)
+right_button = Button(image=right_img, highlightthickness=0, borderwidth=0, command=is_known)
 right_button.grid(row=1, column=1)
 
 # Wrong button
