@@ -37,6 +37,7 @@ def flip_card():
 def is_known():
     to_learn.remove(current_card)
     data = pd.DataFrame(to_learn)
+    # index=False means don't include the index
     data.to_csv("data/words_to_learn.csv", index=False)
     next_card()
 
