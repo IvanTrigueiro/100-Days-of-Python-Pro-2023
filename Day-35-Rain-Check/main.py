@@ -8,6 +8,8 @@ from twilio.rest import Client
 account_sid = os.environ["TWILIO_ACCOUNT_SID"]
 auth_token = os.environ["TWILIO_AUTH_TOKEN"]
 api_key = os.environ["API_KEY"]
+my_number = os.environ["MY_NUMBER"]
+twilio_number = os.environ["TWILIO_NUMBER"]
 
 OWM_Endpoint = "https://api.openweathermap.org/data/3.0/onecall"
 
@@ -36,8 +38,8 @@ if will_rain:
     message = client.messages \
         .create(
         body="It's going to rain today. Remember to bring an ☔️",
-        from_='+twilionumber',
-        to='+randomnumber'
+        from_=f"+{twilio_number}",
+        to=f"+{my_number}"
     )
     print(message.status)
 
