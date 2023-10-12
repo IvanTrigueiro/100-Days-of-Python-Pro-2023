@@ -40,17 +40,28 @@ class FlightSearch:
         try:
             tequila_data = tequila_response.json()["data"][0]
         except IndexError:
-            print(f"No flights found for {destination_city_code}.")
-            return None
+            tequila_params["max_stopovers"] = 2
+            tequila_response = requests.get(url=url, headers=tequila_headers, params=tequila_params)
+            tequila_data = tequila_response.json()["data"][0]
+            flight_data = FlightData(
+                price=tequila_data["price"],
+                origin_city=tequila_data["route"][0]["cityFrom"],
+                origin_airport=tequila_data["route"][0]["flyFrom"],
+                destination_city=tequila_data["route"][0]["cityTo"],
+                destination_airport=tequila_data["route"][0]["flyTo"],
+                out_date=tequila_data["route"][0]["local_departure"].split("T")[0],
+                return_date=tequila_data["route"][1]["local_departure"].split("T")[0]
+            )
+            return flight_data
+        else:
+            flight_data = FlightData(
+                price=tequila_data["price"],
+                origin_city=tequila_data["route"][0]["cityFrom"],
+                origin_airport=tequila_data["route"][0]["flyFrom"],
+                destination_city=tequila_data["route"][0]["cityTo"],
+                destination_airport=tequila_data["route"][0]["flyTo"],
+                out_date=tequila_data["route"][0]["local_departure"].split("T")[0],
+                return_date=tequila_data["route"][1]["local_departure"].split("T")[0]
+            )
+            return flight_data
 
-        flight_data = FlightData(
-            price=tequila_data["price"],
-            origin_city=tequila_data["route"][0]["cityFrom"],
-            origin_airport=tequila_data["route"][0]["flyFrom"],
-            destination_city=tequila_data["route"][0]["cityTo"],
-            destination_airport=tequila_data["route"][0]["flyTo"],
-            out_date=tequila_data["route"][0]["local_departure"].split("T")[0],
-            return_date=tequila_data["route"][1]["local_departure"].split("T")[0]
-        )
-        print(f"Found {flight_data.destination_city}: ${flight_data.price}")
-        return flight_data

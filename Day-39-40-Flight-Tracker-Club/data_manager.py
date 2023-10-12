@@ -1,5 +1,6 @@
 import os
 import requests
+
 sheety_username = os.environ.get("SHEETY_USERNAME")
 sheety_token = os.environ.get("SHEETY_TOKEN")
 sheety_headers = {
@@ -10,6 +11,7 @@ sheety_headers = {
 class DataManager:
     # This class is responsible for talking to the Google Sheet.
     def __init__(self):
+        self.customer_data = None
         self.destination_data = {}
 
     def get_destination_data(self):
@@ -31,8 +33,9 @@ class DataManager:
             put_response = requests.put(url=sheety_put_endpoint, headers=sheety_headers, json=new_data)
             print(put_response.text)
 
-
-
-
-
-
+    def get_customer_emails(self, email):
+        customers_endpoint = f"https://api.sheety.co/{sheety_username}/flightDeals/users/"
+        customers_response = requests.get(url=customers_endpoint, headers=sheety_headers)
+        data = customers_response.json()
+        self.customer_data = data["users"]
+        return self.customer_data
