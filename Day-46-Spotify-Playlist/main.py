@@ -31,6 +31,7 @@ artists_names = [element for i, element in enumerate(artists_names_untreated) if
 # top 100 ranking
 rank_100 = [f"{span_elements[i]} - {song_names[i]}" for i in range(100)]
 
+# Spotify Authentication
 sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=spotipy_client_id,
                                                client_secret=spotipy_client_secret,
                                                redirect_uri=spotipy_redirect_uri,
