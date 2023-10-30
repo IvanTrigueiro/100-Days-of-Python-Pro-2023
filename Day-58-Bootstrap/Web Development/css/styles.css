@@ -1,21 +1,46 @@
 body {
     font-family: "Montserrat";
+    text-align: center;
 }
 
-#title {
-    background-color: #ff4c68;
-    color: #fff;
-}
 
-h1 {
-    font-family: "Montserrat";
-    font-weight: 900;
+/* HEADINGS */
+.big-heading {
+    font-weight: bold;
     font-size: 3.5rem;
     line-height: 1.5;
 }
 
+.section-heading {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+
 .container-fluid {
-    padding: 3% 15%;
+    padding: 7% 15%;
+}
+
+/* TITLE SECTION */
+#title {
+    background-color: #ff4c68;
+    color: #fff;
+    text-align: left;
+}
+
+#title .container-fluid {
+    padding: 3% 15% 7%;
+}
+
+/* SECTION */
+.colored-section{
+    background-color: #ff4c68;
+    color: #fff;
+}
+
+.white-section{
+    background-color: #fff;
 }
 
 /* Navigation Bar */
@@ -46,15 +71,17 @@ h1 {
 
 /* Title Image */
 .title-image {
-    width: 50%;
+    width: 20%;
     transform: rotate(25deg);
+    position: absolute;
+    right: 30%;
 }
 
 /* Features */
 #features{
     font-family: "Montserrat";
-    text-align: center;
-    padding: 7% 15%;
+    background-color: #fff;
+    position: relative;
 }
 
 #features i{
@@ -66,7 +93,7 @@ h1 {
     color: #ff4c68;
 }
 
-#features h3{
+.feature-title {
     font-weight: bold;
     font-size: 1.5rem;
 }
@@ -74,3 +101,77 @@ h1 {
 #features p{
     color: #8f8f8f;
 }
+
+/* Testimonial Section*/
+#testimonials {
+    background-color: #ef8172;
+}
+
+.testimonial-text{
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+.testimonial-image {
+    width: 10%;
+    border-radius: 100%;
+    margin: 20px;
+}
+
+
+/* Press */
+#press {
+    
+    background-color: #ef8172;
+    padding-bottom: 3%;
+}
+
+.press-logo {
+    width: 15%;
+    margin: 20px 20px 50px;
+}
+
+/* Pricing */
+#pricing {
+    padding: 100px;
+    
+}
+
+.pricing-column {
+    padding: 3% 2%;
+}
+
+.price-text {
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+/* CTA section */
+#cta {
+    background-color: #ff4c68;
+    color: #fff;
+    
+}
+
+.cta-heading{
+    font-family: "Montserrat";
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+/* FooterSection */
+
+.social-icon{
+    margin: 20px 10px;
+}
+
+@media (max-width: 1028px) {
+    #title {
+        text-align: center;
+    }
+    .title-image {
+        position: static;
+        transform: rotate(0);
+    }
+}
+
