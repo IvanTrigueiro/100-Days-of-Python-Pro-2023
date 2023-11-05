@@ -47,7 +47,7 @@ def add_cafe():
     if cafe_form.validate_on_submit():
         form_entry = [entry.data for entry in cafe_form][:-2]
         form_entry[0] = '\n' + form_entry[0]
-        with open('cafe-data.csv', mode='a') as data_file:
+        with open('cafe-data.csv', mode='a', encoding='utf8') as data_file:
             entry_data = ','.join(form_entry)
             data_file.write(entry_data) # There is a problem here, will fix it later
         return render_template('/add.html', form=cafe_form)
